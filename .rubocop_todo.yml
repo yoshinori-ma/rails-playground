@@ -34,10 +34,3 @@ Style/Documentation:
 Style/IfUnlessModifier:
   Exclude:
     - 'bin/bundle'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Layout/LineLength:
-  Max: 198
