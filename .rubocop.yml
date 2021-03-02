@@ -1,0 +1,14 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+# Date.today を生まれる前に消し去りたい
+Rails/Date:
+  Severity: error
+
+# Time.now を生まれる前に消し去りたい
+Rails/TimeZone:
+  Severity: error
