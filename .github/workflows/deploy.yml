@@ -1,8 +1,8 @@
 name: deploy
-on: push
-#  push:
-#    branches:
-#      - master
+on:
+  push:
+    branches:
+      - master
 jobs:
   notify-slack:
     runs-on: ubuntu-latest
