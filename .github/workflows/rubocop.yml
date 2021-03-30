@@ -1,6 +1,6 @@
 # .github/workflows/rubocop.yml
 name: RuboCop
-on: [ push ]
+on: [ pull_request ]
 jobs:
   rubocop:
     runs-on: ubuntu-latest
@@ -10,21 +10,6 @@ jobs:
         with:
           # ruby-version: 2.7.1 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - run: |
-          bundle install
-#      - name: Run rubocop
-#        run: bundle exec rubocop
-      #      - name: Setup reviewdog
-      #        run: |
-      #          mkdir -p $HOME/bin && curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b $HOME/bin
-      #          echo ::add-path::$HOME/bin
-#      - uses: reviewdog/action-setup@v1
-#        with:
-#          reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
-#      - name: Run rubocop with reviewdog
-#        env:
-#          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: bundle exec rubocop | reviewdog -reporter=github-pr-review -f=rubocop
       - name: rubocop
         uses: reviewdog/action-rubocop@v1
         with:
