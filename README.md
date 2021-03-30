@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+本番導入前に色々な技術を試しています
 
-Things you may want to cover:
+# 導入技術
+# Rubocop
+- 初回導入時の方法
+  - エラーリストアップ
+  - 一旦 todo で抱えこむ
+  - 少しずつ解消していく
+- 特定のチェックを強くしたい
+  - ex) Time.now を error にしたかった
 
-* Ruby version
+# RSpec
+- 導入だけ
+- CI で回すのが目的
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# GitHubActions
+- CI/CD を CircleCI から移行したかった
+- TOKEN の扱いが楽...
+- マネージドな Action が多くて楽(CircleCI も orbs たくさんあるけど)  
+- Rubocop → RSpec → ECS deploy までやる予定
