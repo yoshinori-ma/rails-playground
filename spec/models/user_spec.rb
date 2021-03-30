@@ -28,6 +28,16 @@ RSpec.describe User, type: :model do
             expect(user).not_to be_valid
           end
         end
+
+        context 'for a long name' do
+          before do
+            user.name = 'a' * 10
+          end
+
+          it 'is invalid' do
+            expect(user).not_to be_valid
+          end
+        end
       end
     end
   end
