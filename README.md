@@ -2,6 +2,15 @@
 
 本番導入前に色々な技術を試しています
 
+# before push
+```bash
+bundle exec rubocop --auto-correct
+
+# どうしても解決しない場合
+# rubocop.yml にて除外設定を書くか、以下のコマンドで todo に追加
+bundle exec rubocop --auto-gen-config --exclude-limit=99999 --no-offense-counts --no-auto-gen-timestamp
+```
+
 # 導入技術
 # Rubocop
 - 初回導入時の方法
