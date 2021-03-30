@@ -10,19 +10,12 @@ jobs:
         with:
           # ruby-version: 2.7.1 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: rubocop
-        uses: reviewdog/action-rubocop@v1
-        with:
-          rubocop_version: gemfile
-          rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile rubocop-performance:gemfile
-          github_token: ${{ secrets.github_token }}
-          # reporter: github-pr-review
-          reporter: github-pr-check
-      # check と review を両方やりたい…解決策無いので2回
-      - name: rubocop
+      - name: rubocop pr-review
         uses: reviewdog/action-rubocop@v1
         with:
           rubocop_version: gemfile
           rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile rubocop-performance:gemfile
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
+      - name: rubocop check
+        run: bundle exec rubocop
