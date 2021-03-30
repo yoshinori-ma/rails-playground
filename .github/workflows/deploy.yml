@@ -1,0 +1,19 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: notify to slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
+          channel: '#brain_dev'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: always() # Pick up events even if the job fails or is canceled.
+

@@ -1,0 +1,21 @@
+# .github/workflows/rubocop.yml
+name: RuboCop
+on: [ pull_request ]
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          # ruby-version: 2.7.1 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: rubocop pr-review
+        uses: reviewdog/action-rubocop@v1
+        with:
+          rubocop_version: gemfile
+          rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile rubocop-performance:gemfile
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+      - name: rubocop check
+        run: bundle exec rubocop
