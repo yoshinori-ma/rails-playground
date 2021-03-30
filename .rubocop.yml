@@ -12,3 +12,14 @@ Rails/Date:
 # Time.now を生まれる前に消し去りたい
 Rails/TimeZone:
   Severity: error
+
+# クラス、メソッドに document を必須とするルール。重い
+Style/Documentation:
+  Enabled: false
+
+# context に when/without を使わなければいけないルール。除外
+RSpec/ContextWording:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  SafeAutoCorrect: true # 自動修正の対象にする。デフォルトだと --auto-correct-all 時にしか動かない
