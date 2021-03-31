@@ -29,3 +29,7 @@ bundle exec rubocop --auto-gen-config --exclude-limit=99999 --no-offense-counts 
 - TOKEN の扱いが楽...
 - マネージドな Action が多くて楽(CircleCI も orbs たくさんあるけど)  
 - Rubocop → RSpec → ECS deploy までやる予定
+
+# Dependabot
+- 導入というか設定しました
+- 適宜マージしていく予定
