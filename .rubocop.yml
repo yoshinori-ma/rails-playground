@@ -23,3 +23,7 @@ RSpec/ContextWording:
 
 Style/FrozenStringLiteralComment:
   SafeAutoCorrect: true # 自動修正の対象にする。デフォルトだと --auto-correct-all 時にしか動かない
+
+# 日本語のコメントを許容する
+Style/AsciiComments:
+  Enabled: false
