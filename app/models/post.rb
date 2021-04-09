@@ -20,8 +20,23 @@ class Post < ApplicationRecord
   after_update :after_update
   after_destroy :after_destroy
   after_save :after_save
-  after_commit :after_commit
   after_rollback :after_rollback
+
+  # after_commit 検証
+  # 後に定義されたコールバックが優先されるはず
+  # だったけど、全部普通に動く
+  # after_save_commit { log(:after_save_commit) } 同じ
+  after_commit { log(:after_commit) }
+  # after_commit { log(:after_create_commit) }, on: [:create] 同じ
+  after_create_commit { log(:after_create_commit) }
+  # after_commit { log(:after_update_commit) }, on: [:update] 同じ
+  after_update_commit { log(:after_update_commit) }
+  # after_commit { log(:after_destroy_commit) }, on: [:destroy] 同じ
+  after_destroy_commit { log(:after_destroy_commit) }
+
+  def log(name)
+    logger.debug "#{self.class.name}##{name}"
+  end
 
   def after_initialize
     logger.debug "#{self.class.name}##{__method__}"
