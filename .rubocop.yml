@@ -27,3 +27,7 @@ Style/FrozenStringLiteralComment:
 # 日本語のコメントを許容する
 Style/AsciiComments:
   Enabled: false
+
+# puts とか許容
+Rails/Output:
+  Enabled: false
