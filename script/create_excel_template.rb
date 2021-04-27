@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBuildingOutlineSheetService
   def self.call(*args, **kwargs)
     new(*args, **kwargs).call
@@ -33,7 +35,8 @@ class CreateBuildingOutlineSheetService
     end
 
     # sheet.column_widths(*1 * max_col_width)
-    sheet.add_style 'A1:S1', border_top: { style: :thick, color: '000000' }, border_bottom: { style: :thick, color: '000000' }
+    sheet.add_style 'A1:S1', border_top: { style: :thick, color: '000000' },
+                             border_bottom: { style: :thick, color: '000000' }
     sheet.add_style 'A1:A10', border_left: { style: :thick, color: '000000' }
     sheet.add_style 'S1:S10', border_right: { style: :thick, color: '000000' }
     sheet.add_style 'A10:S10', border_bottom: { style: :thick, color: '000000' }
