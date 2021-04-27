@@ -16,3 +16,9 @@ RSpec/MultipleExpectations:
 
 RSpec/NestedGroups:
   Max: 5
+
+Metrics/AbcSize:
+  Max: 52
+
+Metrics/MethodLength:
+  Max: 26
