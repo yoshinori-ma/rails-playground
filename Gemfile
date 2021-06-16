@@ -8,6 +8,8 @@ ruby '2.7.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3'
 gem 'sqlite3', '~> 1.4'
+gem 'mysql2'
+gem 'net-ssh-gateway'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

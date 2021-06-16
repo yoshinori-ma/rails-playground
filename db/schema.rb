@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_08_013954) do
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
     t.text "body"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_013954) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
