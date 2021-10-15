@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_013954) do
+ActiveRecord::Schema.define(version: 2021_10_15_222956) do
+
+  create_table "plans", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["uuid"], name: "index_plans_on_uuid"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false

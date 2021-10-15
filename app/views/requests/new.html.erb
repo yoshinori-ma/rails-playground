@@ -1,0 +1,18 @@
+<% @plan.attributes.each do |k, v| %>
+  <p>
+    <%= k %>
+  </p>
+  <p>
+    <%= v %>
+  </p>
+<% end %>
+
+<%= form_with url: plan_request_path do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
+
+<%= form_with url: hoge_plan_request_path do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
